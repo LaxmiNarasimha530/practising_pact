@@ -3,19 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:donaldwade/practising_pact.git",
-  "author": "Donald Wade <rwckdw@gmail.com>",
+  "author": "Donald Wade <dwade@thoughtworks.com>",
   "license": "MIT",
   "babel": {
     "presets": [
-      "env"
+      "env",
+      "react"
     ]
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "test": "tape -r babel-register **/*.test.js | colortape"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "blue-tape": "^1.0.0",
+    "colortape": "^0.1.2",
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
