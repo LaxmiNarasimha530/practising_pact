@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 const config = {
   entry: './src/index.js',
@@ -8,4 +8,4 @@ const config = {
   }
 };
 
-export default config;
+module.exports = config;
