@@ -13,15 +13,18 @@
   },
   "scripts": {
     "build": "webpack",
+    "start": "webpack-dev-server --port 3000",
     "test": "tape -r babel-register **/*.test.js | colortape"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "blue-tape": "^1.0.0",
     "colortape": "^0.1.2",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
     "react": "^16.0.0",
