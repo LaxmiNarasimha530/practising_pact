@@ -1,0 +1,8 @@
+{
+  "name": "practising_pact",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:donaldwade/practising_pact.git",
+  "author": "Donald Wade <rwckdw@gmail.com>",
+  "license": "MIT"
+}

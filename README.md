@@ -14,4 +14,4 @@ nvm install 8
 ```
 brew install yarn
 ```
-4.   
+4.  Docker  
