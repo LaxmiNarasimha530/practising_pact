@@ -1,11 +1,16 @@
 import React from 'react';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello from React!</h1>
-    </div>
-  )
-};
+import { Button } from './components';
+import { makeGetRequest } from './helpers';
+
+const App = () => (
+  <div>
+    <h1>Hello from React!</h1>
+    <Button
+      label="Click me"
+      onclick={makeGetRequest}
+    />
+  </div>
+);
 
 export default App;
