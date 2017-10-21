@@ -7,8 +7,7 @@ import { Button } from './';
 
 configure({ adapter: new Adapter() });
 
-
-test('Say hello', (t) => {
+test('Button should render correct text', (t) => {
   const wrapper = shallow(<Button label="Boo" onclick={() => {}} />);
   const expectedText = 'Boo';
   t.ok(wrapper.text() === expectedText, 'Button renders correct value');
