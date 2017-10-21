@@ -14,4 +14,9 @@ nvm install 8
 ```
 brew install yarn
 ```
-4.  Docker  
+4.  Docker
+
+
+Babel tools
+Webpack
+
