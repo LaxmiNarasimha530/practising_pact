@@ -1,4 +1,4 @@
-const data = [
+export default [
   {
     "userId": 1,
     "id": 1,
@@ -600,5 +600,3 @@ const data = [
     "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
   }
 ];
-
-export { data as default };
