@@ -1,15 +1,11 @@
 import React from 'react';
 
-import { Button } from './components';
-import { makeGetRequest } from './helpers';
+import { Button, Display } from './components';
 
 const App = () => (
   <div>
     <h1>Hello from React!</h1>
-    <Button
-      label="Click me"
-      onclick={makeGetRequest}
-    />
+    <Display />
   </div>
 );
 
