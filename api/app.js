@@ -4,6 +4,7 @@ const app = express();
 const data = require('./data/data');
 
 app.get('/posts', (req, res) => {
+  console.log('Hit!');
   res.send(data.data)
 });
 
