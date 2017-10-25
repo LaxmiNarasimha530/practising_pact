@@ -21,6 +21,7 @@
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "blue-tape": "^1.0.0",
     "colortape": "^0.1.2",
@@ -34,7 +35,7 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.17.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
     "lodash": "^4.17.4",
