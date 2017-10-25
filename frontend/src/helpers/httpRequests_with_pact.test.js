@@ -9,7 +9,7 @@ import { makeGetRequest } from './';
 const MOCK_SERVER_PORT = 2202;
 const PACT_MOCK_API = `http://localhost:${MOCK_SERVER_PORT}`;
 
-test('makeGetRequest should return correct data from real API', (t) => {
+test('MakeGetRequest should return correct data from real API', (t) => {
   const provider = pact({
     consumer: 'App',
     provider: 'API',

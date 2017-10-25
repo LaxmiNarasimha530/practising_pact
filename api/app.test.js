@@ -1,22 +1,37 @@
 const verifier = require('pact').Verifier;
 const path = require('path');
+const test = require('blue-tape');
+const fs = require('fs');
 
-const thing = path.resolve(process.cwd(), '../frontend/pacts');
+fs.copyFile('../frontend/pacts/app-api.json', './pacts/app-api.json', (err) => {
+  if (err) throw err;
+  console.log('Pact file was copied');
+})
+
+const thing = path.resolve(process.cwd(), './pacts');
 console.log(thing);
 
 let opts = {
   providerBaseUrl: 'http://localhost:5000/pacts',
-  pactUrls: [path.resolve(process.cwd(), '../frontend/pacts/app-api.json')],
+  pactUrls: [path.resolve(process.cwd(), './pacts/app-api.json')],
   provider: 'API',
 };
 
 console.log(opts.pactUrls);
 
-verifier.verifyProvider(opts)
-.then(() => {
-  console.log('SUCCESS');
-})
-.catch((e) => {
-  console.log(e);
-  console.log('FAIL');
+test('Run Pact test', (t) => {
+  verifier.verifyProvider(opts)
+    .then(() => {
+      console.log('SUCCESS');
+      t.pass('Pact was met.');
+    })
+    .catch((e) => {
+      console.log(e);
+      console.log('FAIL');
+      t.fail('Pact was not met.');
+    })
+  .then(() => {
+    t.end();
+  });
 });
+

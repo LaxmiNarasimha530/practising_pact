@@ -5,6 +5,7 @@ const data = require('./data/data');
 
 app.get('/posts', (req, res) => {
   console.log('Hit!');
+  res.header('Content-Type', 'application/json');
   res.send(data.data)
 });
 
