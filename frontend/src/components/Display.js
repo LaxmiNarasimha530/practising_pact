@@ -3,50 +3,103 @@ import React from 'react';
 import { Button } from './';
 import { makeGetRequest } from '../helpers';
 
+
+const ShowExternalApiData = (data) => {
+  const basicStructure = (element, i) => (
+    <div
+      key={i}
+    >
+      <hr />
+      <span
+        className="column"
+      >
+        Title:
+        {element.title}
+      </span>
+      <span
+        className="column"
+      >
+        ID:
+        {element.userId}
+      </span>
+    </div>
+  );
+
+  const arrayOfData = _.first(data.data);
+  const contents = _.map(arrayOfData, basicStructure);
+
+  return (
+    <div>{contents}</div>
+  );
+};
+
+const ShowData = data => (
+  <div>
+    <hr />
+    {JSON.stringify(data)}
+  </div>
+);
+
 export class Display extends React.Component {
   constructor(props) {
     super(props);
-    this.click = this.click.bind(this);
-    this.setData = this.setData.bind(this);
+    this.getData = this.getData.bind(this);
+    this.clearData = this.clearData.bind(this);
+    this.getExampleData = this.getExampleData.bind(this);
     this.url = 'http://localhost:5000/health';
+    this.externalApi = 'https://jsonplaceholder.typicode.com/posts';
     this.state = {
-      data: [],
+      localApiData: [],
+      externalApiData: [],
     };
   }
 
-  setData() {
+  getData() {
     makeGetRequest(this.url)
       .then((value) => {
         this.setState({
-          number: value.data.length,
-          data: value.data,
+          localApiData: [value.data],
         });
       });
   }
 
-  click() {
-    this.setState((this.state, {
-      on: !this.state.on,
-      counter: this.state.counter + 1,
-    }));
+  getExampleData() {
+    makeGetRequest(this.externalApi)
+      .then((value) => {
+        this.setState({
+          externalApiData: [value.data],
+        });
+      });
+  }
+
+  clearData() {
+    this.setState({
+      localApiData: [],
+      externalApiData: [],
+    });
   }
 
   render() {
-    const data = this.state.data;
     <div>
-      {data}
-    </div>
+      {this.state.data}
+    </div>;
 
     return (
       <div>
         <Button
           label="Get Data"
-          onclick={this.setData}
+          onclick={this.getData}
         />
-        <div>
-          <hr />
-          {JSON.stringify(this.state.data)}
-        </div>
+        <Button
+          label="Clear Data"
+          onclick={this.clearData}
+        />
+        <Button
+          label="Get external data"
+          onclick={this.getExampleData}
+        />
+        <ShowData data={this.state.localApiData} />
+        <ShowExternalApiData data={this.state.externalApiData} />
       </div>
     );
   }
