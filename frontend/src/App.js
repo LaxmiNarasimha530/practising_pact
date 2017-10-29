@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Button, Display } from './components';
+import { Display } from './components';
 
 const App = () => (
   <div>
-    <h1>Hello from React!</h1>
+    <h1>Practising Pact</h1>
     <Display />
   </div>
 );
