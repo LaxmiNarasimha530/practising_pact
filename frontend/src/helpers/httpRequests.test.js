@@ -11,7 +11,7 @@ const PACT_MOCK_API = `http://localhost:${MOCK_SERVER_PORT}`;
 
 let provider;
 
-test('BOO', (t) => {
+test('Mock server', (t) => {
   provider = pact({
     consumer: 'App',
     provider: 'API',
@@ -25,8 +25,7 @@ test('BOO', (t) => {
   const EXPECTED_BODY = data;
   const EXPECTED_BODY_HEALTH = { ok: true };
 
-  // Set up the provider
-  provider.setup()
+  // Set up the provider provider.setup()
     .then(() => {
     // Add the first interaction
       provider.addInteraction({

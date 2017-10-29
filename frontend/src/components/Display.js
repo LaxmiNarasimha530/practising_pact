@@ -87,16 +87,18 @@ export class Display extends React.Component {
     return (
       <div>
         <Button
-          label="Get Data"
+          label="Get data from local API"
           onclick={this.getData}
-        />
-        <Button
-          label="Clear Data"
-          onclick={this.clearData}
         />
         <Button
           label="Get external data"
           onclick={this.getExampleData}
+        />
+        <br />
+        <br />
+        <Button
+          label="Clear Data"
+          onclick={this.clearData}
         />
         <ShowData data={this.state.localApiData} />
         <ShowExternalApiData data={this.state.externalApiData} />
