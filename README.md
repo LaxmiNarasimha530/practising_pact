@@ -1,4 +1,4 @@
-# Practising Pact
+# Practising Pact: Tuesday 31 October
 
 ## Get set up
 
@@ -6,7 +6,11 @@
 
 This should work with Node 8 and yarn. I haven't tested other set ups.
 
-### 1. Clone the repository
+### 1. Fork the repository
+
+* Navigate to your copy on github
+* Clone it
+* Invite your pair as a collaborator
 
 The front end should look something like this: 
 
