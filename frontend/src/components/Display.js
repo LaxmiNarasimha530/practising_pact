@@ -90,10 +90,12 @@ export class Display extends React.Component {
           label="Get data from local API"
           onclick={this.getData}
         />
-        <Button
-          label="Get external data"
-          onclick={this.getExampleData}
-        />
+        { 
+          // <Button
+          //   label="Get external data"
+          //   onclick={this.getExampleData}
+          // />
+        }
         <br />
         <br />
         <Button
