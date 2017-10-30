@@ -1,0 +1,17 @@
+version: '2'
+services:
+  frontend:
+    build: .
+    image: practisingpact
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 3000:3000
+
+  api:
+    build: .
+    image: practisingpact
+    volumes:
+      - ./api:/app
+    ports:
+      - 5000:5000

@@ -20,6 +20,6 @@ app.get('/health', (req, res) => {
   res.send(JSON.stringify(healthcheck));
 });
 
-app.listen(5000, () => {
+app.listen(5000, '0', () => {
   console.log('API is running on port 5000');
 });
