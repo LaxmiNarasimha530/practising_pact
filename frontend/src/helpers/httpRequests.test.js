@@ -25,7 +25,8 @@ test('Mock server', (t) => {
   const EXPECTED_BODY = data;
   const EXPECTED_BODY_HEALTH = { ok: true };
 
-  // Set up the provider provider.setup()
+  // Set up the provider
+  provider.setup()
     .then(() => {
     // Add the first interaction
       provider.addInteraction({
