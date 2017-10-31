@@ -1,12 +1,12 @@
 const verifier = require('pact').Verifier;
 const path = require('path');
 const test = require('blue-tape');
-const fs = require('fs');
+// const fs = require('fs');
 
-fs.copyFile('../frontend/pacts/app-api.json', './pacts/app-api.json', (err) => {
-  if (err) throw 'There is no pact file; you probably need to run the front end tests';
-  console.log('Pact file was copied');
-})
+// fs.copyFile('../frontend/pacts/app-api.json', './pacts/app-api.json', (err) => {
+//   if (err) throw 'There is no pact file; you probably need to run the front end tests';
+//   console.log('Pact file was copied');
+// })
 
 let opts = {
   providerBaseUrl: 'http://localhost:5000/pacts',
