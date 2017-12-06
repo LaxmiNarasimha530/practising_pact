@@ -1,4 +1,4 @@
-# Practising Pact: Tuesday 31 October
+# Practising Pact: Thursday 7 December
 
 ## Get set up
 
